@@ -1,5 +1,4 @@
 protobuf==5.28.0
-PyYAML==6.0.1
 PyYAML==6.0.2
 streamlit==1.36.0
 streamlit_authenticator==0.2.3
