@@ -1,0 +1,9 @@
+cookie:
+  expiry_days: 365
+  key: thisisthekey
+  name: test_cookie
+credentials:
+  usernames:
+    raphael.lagarde:
+      name: Raphaël Lagarde
+      password: $2b$12$rgeRu1c2fh3P6Ooy3GbSAOSfBObq9hxRu9IrfbHQDbuqEQu8NvV9S
