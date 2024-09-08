@@ -98,10 +98,15 @@ if authentication_status:
             for m in sit_mark.keys():
                 st.subheader(f':green[{m}]')
                 st.select_slider(sit_mark[m][0], options=sit_mark[m][1], value=10, key=m)
-
-        for m in env_mark.keys():
-            st.subheader(f':blue[{m}]')
-            st.select_slider(env_mark[m][0], options=env_mark[m][1], value=10, key=m)
+            
+            if st.session_state['n_sess'] == 1:
+                for m in env_mark.keys():
+                    st.subheader(f':blue[{m}]')
+                    st.select_slider(env_mark[m][0], options=env_mark[m][1], value=10, key=m)
+        else:
+            for m in env_mark.keys():
+                st.subheader(f':blue[{m}]')
+                st.select_slider(env_mark[m][0], options=env_mark[m][1], value=10, key=m)
 
         '---'    
 
