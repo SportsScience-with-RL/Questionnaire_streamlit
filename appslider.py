@@ -95,25 +95,24 @@ if authentication_status:
         if st.session_state['session'] != 'Repos':
             if st.session_state['n_sess'] == 1:
                 res_mark = list(sit_mark.keys()) + list(env_mark.keys())
-            else:
+                for m in sit_mark.keys():
+                    st.subheader(f':green[{m}]')
+                    st.select_slider(sit_mark[m][0], options=sit_mark[m][1], value=10, key=m)
+                for m in env_mark.keys():
+                    st.subheader(f':blue[{m}]')
+                    st.select_slider(env_mark[m][0], options=env_mark[m][1], value=10, key=m)
+
+            elif st.session_state['n_sess'] > 1:
                 res_mark = list(sit_mark.keys())
+                for m in sit_mark.keys():
+                    st.subheader(f':green[{m}]')
+                    st.select_slider(sit_mark[m][0], options=sit_mark[m][1], value=10, key=m)
+
         elif st.session_state['session'] == 'Repos':
             res_mark = list(env_mark.keys())
-
-        if st.session_state['session'] != 'Repos':
-            for m in res_mark.keys():
-                st.subheader(f':green[{m}]')
-                st.select_slider(res_mark[m][0], options=res_mark[m][1], value=10, key=m)
-            
-            if st.session_state['n_sess'] == 1:
-                for m in res_mark.keys():
-                    st.subheader(f':blue[{m}]')
-                    st.select_slider(res_mark[m][0], options=res_mark[m][1], value=10, key=m)
-
-        elif st.session_state['session'] == 'Repos':
-            for m in res_mark.keys():
+            for m in env_mark.keys():
                 st.subheader(f':blue[{m}]')
-                st.select_slider(res_mark[m][0], options=res_mark[m][1], value=10, key=m)
+                st.select_slider(env_mark[m][0], options=env_mark[m][1], value=10, key=m)
 
         '---'    
 
